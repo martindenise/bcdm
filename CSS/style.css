@@ -1,0 +1,171 @@
+body {
+    background-color: black;
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 400px;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 160px;
+    /* Same as the width of the sidenav */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+
+/****  Topbar  ****/
+
+.topbar {
+    background-color: black;
+    color: white;
+    height
+}
+
+.topbar p {
+    color: white;
+}
+
+.topbar-fixed {
+    height: 40px;
+    background-color: black;
+    font-size: 14px;
+    position: fixed;
+    line-height: 200px;
+    height: 200;
+    text-indent: 20px;
+    width: 100%;
+}
+
+.header-notFixed {
+    line-height: 200;
+    text-align: center;
+    font-size: 28px;
+}
+
+header {
+    transition: all .125s ease-in-out;
+}
+
+.active {
+    background-color: rgba(34, 34, 34, 0.8);
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+
+h3 {
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+.events {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.events .shadowbox {
+    height: 350px;
+    padding-top: 50px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.event {
+    text-align: center;
+    margin-bottom: 200px;
+    min-width: 100px;
+    background-repeat: no-repeat;
+}
+
+.event h3 {
+    padding-top: 50px;
+}
+
+.event {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    flex-grow: 1;
+    /* This is what makes everything magically grow and shrink.*/
+    margin-bottom: 50px;
+    flex-basis: 0;
+    text-align: center;
+    margin-bottom: 200px;
+    min-width: 100px;
+    background-repeat: no-repeat;
+}
+
+.event:hover {
+    flex-grow: 2;
+    /* On-hover the item will grow to double the width, shrinking the rest automatically*/
+}
+
+.events .shadowbox:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.event h3,
+.event a,
+.event p {
+    color: white;
+    width: 90%;
+    margin: auto;
+}
+
+.event:not(:first-of-type) {
+    border-left: 3px solid black;
+}
+
+
+/*@media only screen and (max-width: 775px) {
+    .event:last-of-type {
+        margin-bottom: 30px;
+    }
+    .event:hover {
+        flex-grow: 1; //Disables the growth behavior on-mobile
+    }
+    .event:nth-of-type(1) {
+        min-width: 100%; //Forces the first element to be full-width
+    }
+    .event {
+        min-width: 300px;
+        margin-bottom: 3px;
+    }
+}
