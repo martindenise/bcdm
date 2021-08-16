@@ -1,34 +1,14 @@
-var acc = document.getElementsByClassName("accordion");
-var i;
+let header = document.querySelectorAll(".header");
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
+for (let i = 0; i < header.length; i++) {
+    header[i].addEventListener("click", function() {
+        let ddd = this.nextElementSibling;
+        ddd.classList.toggle("active");
+
+        if (this.firstElementChild.innerText === '+') {
+            this.firstElementChild.innerText = "-";
         } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
+            this.firstElementChild.innerTxt = '+'
         }
-    });
+    })
 }
-/* Denise's Comment out
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
-//this.classList.toggle("active");
-
-/* Toggle between hiding and showing the active panel */
-/*var panel = this.nextElementSibling;
-if (panel.style.display === "block") {
-    panel.style.display = "none";
-} else {
-    panel.style.display = "block";
-}
-});
-}
-End Denise's Comment*/
