@@ -5,10 +5,10 @@ for (let i = 0; i < header.length; i++) {
         let ddd = this.nextElementSibling;
         ddd.classList.toggle("active");
 
-        if (this.firstElementChild.innerText === '+') {
+        if (this.firstElementChild.innerText === "+") {
             this.firstElementChild.innerText = "-";
         } else {
-            this.firstElementChild.innerTxt = '+'
+            this.firstElementChild.innerTxt = "+";
         }
-    })
+    });
 }
