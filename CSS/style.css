@@ -45,7 +45,7 @@ body {
     width: 160px;
     position: fixed;
     z-index: 1;
-    top: 300px;
+    top: 50%;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
@@ -226,7 +226,7 @@ h3 {
 
 .content {
     color: white;
-    margin: 0 170px;
+    margin: 0 200px;
 }
 
 .content h1 {
