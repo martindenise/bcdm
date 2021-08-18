@@ -1,43 +1,405 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.ac-container {
+    width: 400px;
+    margin: 10px auto 30px auto;
+    text-align: left;
 }
 
-body {
-    background: #ffde2a;
-    font-family: Poppins;
-}
-
-.wrapper {
-    background: #fff;
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 12%;
-}
-
-.header {
-    padding: 16px;
-    letter-spacing: 2px;
-    background: #262626;
-    border-bottom: 1px solid #000;
-    cursor: pointer;
+.ac-container label {
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    padding: 5px 20px;
     position: relative;
-    user-select: none;
-    color: #fff;
+    z-index: 20;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+    color: #777;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    line-height: 33px;
+    font-size: 19px;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #ffffff), color-stop(100%, #eaeaea));
+    background: -webkit-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+    background: -o-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+    background: -ms-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+    background: linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea', GradientType=0);
+    box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3), 1px 0px 0px 0px rgba(255, 255, 255, 0.9) inset, 0px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
-.main-text {
-    padding: 16px;
-    line-height: 24px;
+.ac-container label:hover {
+    background: #fff;
+}
+
+.ac-container input:checked+label,
+.ac-container input:checked+label:hover {
+    background: #c6e1ec;
+    color: #3d7489;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3), 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.ac-container label:hover:after,
+.ac-container input:checked+label:hover:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 13px;
+    top: 7px;
+    background: transparent url(../images/arrow_down.png) no-repeat center center;
+}
+
+.ac-container input:checked+label:hover:after {
+    background-image: url(../images/arrow_up.png);
+}
+
+.ac-container input {
     display: none;
 }
 
-.header span {
-    position: absolute;
-    right: 20px;
+.ac-container article {
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: -1px;
+    overflow: hidden;
+    height: 0px;
+    position: relative;
+    z-index: 10;
+    -webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    -moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    -o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    -ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+}
+
+.ac-container article p {
+    font-style: italic;
+    color: #777;
+    line-height: 23px;
+    font-size: 14px;
+    padding: 20px;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.ac-container input:checked~article {
+    -webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -moz-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -o-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -ms-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3);
+}
+
+.ac-container input:checked~article.ac-small {
+    height: 140px;
+}
+
+.ac-container input:checked~article.ac-medium {
+    height: 180px;
+}
+
+.ac-container input:checked~article.ac-large {
+    height: 230px;
+}
+
+body {
+    background-color: black;
+}
+
+
+/* Add a black background color to the top navigation */
+
+.topnav {
+    background-color: black;
+    overflow: hidden;
+}
+
+
+/* Style the links inside the navigation bar */
+
+.topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border: thick solid darkgoldenrod;
+}
+
+
+/* Change the color of links on hover */
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+/* Add a color to the active/current link */
+
+.topnav a.active {
+    background-color: #ca3400;
+    opacity: 80%;
+    color: white;
+}
+
+
+/*.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 300px;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+*/
+
+.main {
+    margin-left: 160px;
+    /* Same as the width of the sidenav */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+
+/****  Topbar  ****/
+
+.topbar {
+    background-color: transparent;
+    height: fit-content;
+}
+
+.topbar-fixed {
+    height: 40px;
+    background-color: transparent;
+    font-size: 14px;
+    position: fixed;
+    line-height: 200px;
+    height: 200;
+    text-indent: 20px;
+    width: 100%;
+    top: 50px;
+}
+
+
+/*.header-notFixed {
+    line-height: 300;
+    text-align: center;
+    font-size: 28px;
+    color: white;
+    display: inline-block;
+}
+
+.topbar ul {
+    color: white;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    margin: 25px auto;
+    padding-top: 15px;
+    display: inline-flex;
+    list-style-type: none;
+    position: relative;
+}
+*/
+
+
+/*Navigation Mendu Starts Here*/
+
+header {
+    transition: all .125s ease-in-out;
 }
 
 .active {
-    display: block;
+    background-color: rgba(34, 34, 34, 0.8);
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+
+h3 {
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+.events {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.events .shadowbox {
+    height: 350px;
+    padding-top: 50px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.event {
+    text-align: center;
+    margin-bottom: 100px;
+    min-width: 100px;
+    background-repeat: no-repeat;
+}
+
+.event h3 {
+    padding-top: 100px;
+}
+
+.event {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    flex-grow: 1;
+    /* This is what makes everything magically grow and shrink.*/
+    margin-bottom: 50px;
+    flex-basis: 0;
+    text-align: center;
+    margin-bottom: 200px;
+    min-width: 100px;
+    background-repeat: no-repeat;
+}
+
+.event:hover {
+    flex-grow: 2;
+    /* On-hover the item will grow to double the width, shrinking the rest automatically*/
+}
+
+.events .shadowbox:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.event h3,
+.event a,
+.event p {
+    color: white;
+    width: 90%;
+    margin: auto;
+}
+
+.event:not(:first-of-type) {
+    border-left: 3px solid black;
+}
+
+
+/*@media only screen and (max-width: 775px) {
+    .event:last-of-type {
+        margin-bottom: 30px;
+    }
+    .event:hover {
+        flex-grow: 1; //Disables the growth behavior on-mobile
+    }
+    .event:nth-of-type(1) {
+        min-width: 100%; //Forces the first element to be full-width
+    }
+    .event {
+        min-width: 300px;
+        margin-bottom: 3px;
+    }
+}
+*/
+
+.content {
+    color: white;
+    margin: 0 170px;
+}
+
+.content h1 {
+    text-align: center;
+}
+
+.marquee {
+    margin: 2rem 0;
+    font-size: 8vw;
+    overflow: hidden;
+}
+
+.marquee--long {
+    font-size: 1.25vw;
+}
+
+
+/*Marquee Starts Here*/
+
+.marquee span {
+    display: inline-block;
+    white-space: nowrap;
+    color: darkgoldenrod;
+    width: var(--tw);
+    text-shadow: var(--tw) 0 currentColor, calc(var(--tw) * 2) 0 currentColor, calc(var(--tw) * 3) 0 currentColor, calc(var(--tw) * 4) 0 currentColor;
+    will-change: transform;
+    animation: marquee var(--ad) linear infinite;
+    animation-play-state: paused;
+}
+
+.marquee:hover span {
+    animation-play-state: running;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/*  
+  * on MacOs: System Preferences > 
+  *           Accessibility > 
+  *           Display > Reduce motion
+  */
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee span {
+        animation: none;
+        text-shadow: none;
+        width: auto;
+        display: block;
+        line-height: 1.5;
+        text-align: center;
+        white-space: normal;
+    }
+}
+
+.marquee span {
+    animation-play-state: running;
+}
+
+label {
+    font: .85rem Courier;
+    margin-left: .5em
 }

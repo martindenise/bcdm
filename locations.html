@@ -6,25 +6,129 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/locations.css">
-
-    <script type="text/javascript" src="JS/locations.js"></script>
-    <title>Locations</title>
+    <script type="text/javascript" src="js/modernizr.custom.29473.js"></script>
+    <title>Document</title>
 </head>
 
+
 <body>
-    <div class="wrapper">
-        <p class="header">Accordion Header Text One
-            <span>+</span></p>
-        <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nesciunt perspiciatis eum reiciendis esse nulla doloribus sit quibusdam architecto nihil. Laudantium quod quaerat asperiores nesciunt ea. Eaque distinctio quaerat tenetur!</p>
-        <p class="header">Accordion Header Text Two
-            <span>+</span></p>
-        <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nesciunt perspiciatis eum reiciendis esse nulla doloribus sit quibusdam architecto nihil. Laudantium quod quaerat asperiores nesciunt ea. Eaque distinctio quaerat tenetur!</p>
-        <p class="header">Accordion Header Text Three
-            <span>+</span></p>
-        <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nesciunt perspiciatis eum reiciendis esse nulla doloribus sit quibusdam architecto nihil. Laudantium quod quaerat asperiores nesciunt ea. Eaque distinctio quaerat tenetur!</p>
-        <p class="header">Accordion Header Text Four
-            <span>+</span></p>
-        <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nesciunt perspiciatis eum reiciendis esse nulla doloribus sit quibusdam architecto nihil. Laudantium quod quaerat asperiores nesciunt ea. Eaque distinctio quaerat tenetur!</p>
+    <div class="topnav">
+        <a class="active" href="tel:9169956518">Sacramento 916.995.6518</a>
+        <a class="active" href="tel:4157936465">Bay Area 415.793.5465</a>
+        <a class="active" href="tel:4807772333">Phoenix 480.777.2333</a>
+        <a class="active" href="tel:8889018477">Nationwide 888.901.TIPS</a>
+    </div>
+    <div class="topbar">
+        <div class="topbar-fixed">
+            <span><img src="images/logonew.png" alt="logo" /></span>
+        </div>
+        <!--<div class="topbar-notFixed">
+        <p>
+            <ul>
+                <li a href="tel:91699565">Sacramento 916.995.6518</li><br><br>
+                <li>Bay Area 415.793.6465</li>
+                <li>Phoenix 480.777.2333</li>
+                <li>Nationwide 888.901.TIPS</li>
+            </ul>
+        </p>
+    </div>-->
+    </div>
+    <header>
+        <div id="container"></div>
+        <div class="events">
+            <a href="#" class="event" style="background-image: url(images/home.jpg)">
+                <div class="shadowbox">
+                    <h3>Home</h3>
+                </div>
+            </a>
+            <a href="#" class="event" style="background-image: url(images/aboutus.jpg)">
+                <div class="shadowbox">
+                    <h3>About Us</h3>
+                </div>
+            </a>
+            <a href="/locations.html" class="event" style="background-image: url(images/unitedstates2.jpg)">
+                <div class="shadowbox">
+                    <h3>Locations</h3>
+                </div>
+            </a>
+            <a href="" class="event" style="background-image: url(images/faq.jpg)">
+                <div class="shadowbox">
+                    <h3>FAQ</h3>
+                </div>
+            </a>
+            <a href="#" class="event" style="background-image: url(images/logonav.jpg)">
+                <div class="shadowbox">
+                    <h3>Enroll Now</h3>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- 
+Variant of the marquee demo by Manoela Ilic appeared on https://tympanus.net/codrops/2020/03/31/css-only-marquee-effect/
+
+This fork uses a single element multiplied by 4 text shadows. -->
+
+
+    <div class="marquee" style="--tw: 40vw; --ad: 2.5s;">
+        <span>Locations</span>
+    </div>
+
+    <div class="marquee marquee--long" style="--tw: 189ch; --ad: 12s;">
+        <span>SACRAMENTO &#9726; PHOENIX &#9726; LAS VEGAS &#9726; SEATTLE &#9726; LOS ALAMITOS &#9726; LOS ANGELES
+   </span>
+    </div>
+    <div class="container">
+        <!-- Codrops top bar -->
+
+        <!--/ Codrops top bar -->
+
+        <section class="ac-container">
+            <div>
+                <input id="ac-1" name="accordion-1" type="checkbox" />
+                <label for="ac-1">Arizona</label>
+                <article class="ac-small">
+                    <p>Phoenix Campus
+                        <br>9830 S. 51st St. #A-132
+                        <br>Phoenix, AZ 85044<br>
+                        <a href="tel:4807772333">480.777.2333</a>
+                    </p>
+                </article>
+            </div>
+            <div>
+                <input id="ac-2" name="accordion-1" type="checkbox" checked />
+                <label for="ac-2">Washington</label>
+                <article class="ac-medium">
+                    <p>Phoenix Campus
+                        <br>9830 S. 51st St. #A-132
+                        <br>Phoenix, AZ 85044<br>
+                        <a href="tel:4807772333">480.777.2333</a>
+                    </p>
+                </article>
+            </div>
+            <div>
+                <input id="ac-3" name="accordion-1" type="checkbox" />
+                <label for="ac-3">Nevada</label>
+                <article class="ac-large">
+                    <p>Phoenix Campus
+                        <br>9830 S. 51st St. #A-132
+                        <br>Phoenix, AZ 85044<br>
+                        <a href="tel:4807772333">480.777.2333</a>
+                    </p>
+                </article>
+            </div>
+            <div>
+                <input id="ac-4" name="accordion-1" type="checkbox" />
+                <label for="ac-4">Seattle</label>
+                <article class="ac-large">
+                    <p>Phoenix Campus
+                        <br>9830 S. 51st St. #A-132
+                        <br>Phoenix, AZ 85044<br>
+                        <a href="tel:4807772333">480.777.2333</a>
+                    </p>
+                </article>
+            </div>
+        </section>
     </div>
 </body>
 
