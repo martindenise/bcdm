@@ -35,7 +35,7 @@ body {
 /* Add a color to the active/current link */
 
 .topnav a.active {
-    background-color: #ca3400;
+    background-color: darkred;
     opacity: 80%;
     color: white;
 }
