@@ -90,7 +90,6 @@ body {
 }
 
 .topbar-fixed {
-    height: 40px;
     background-color: transparent;
     font-size: 14px;
     position: fixed;
