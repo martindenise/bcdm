@@ -20,6 +20,7 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    font-weight: bold;
     border: thick solid darkgoldenrod;
 }
 
@@ -36,7 +37,6 @@ body {
 
 .topnav a.active {
     background-color: darkred;
-    opacity: 80%;
     color: white;
 }
 
