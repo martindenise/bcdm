@@ -84,27 +84,426 @@
             Bartending School a serious look?</i>
         </p>
     </div>
+    <!--start old code-->
+    <div id="mainmiddle " class="floatbox withright ">
 
-    <div class="marquee-wrap">
+        <div id="right ">
+            <div id="right_container " class="clearingfix ">
+                <div class="moduletable ">
+                    <h3>
+                        Contact Your Local Bartending School </h3>
+                    <style type="text/css ">
+                        INPUT {
+                            MARGIN-BOTTOM: 5px
+                        }
+                        
+                        SELECT {
+                            MARGIN-BOTTOM: 5px
+                        }
+                        
+                        TEXTAREA {
+                            MARGIN-BOTTOM: 5px
+                        }
+                        
+                        #fname {
+                            position: absolute;
+                            width: 30px;
+                            margin-top: -900px;
+                        }
+                        
+                        .buttons {
+                            TEXT-ALIGN: center
+                        }
+                    </style>
+                    <script type="text/javascript " language="JavaScript ">
+                        function checkForm() {
+                            var cform = document.getElementById('sidecontactform');
+                            if (!cform) {
+                                cform = document.forms[0];
+                            }
+                            if (!cform.name.value.match(/^[A-Z0-9 .'-]{2,90}$/i)) {
+                                alert("Please provide your name ");
+                                cform.name.focus();
+                                return false;
+                            }
+                            if (!cform.mail.value.match(/^[\w][\w\.-]*@[\w][\w\.-]*\.[\w]{2,4}$/)) {
+                                alert("That doesn 't look like a valid email address");
+                                cform.mail.focus();
+                                cform.mail.select();
+                                return false;
+                            }
+                            if (cform.mobile.value != "" && !cform.mobile.value.match(/^\+?[\d\s\-\.)(]{10,18}$/)) {
+                                alert("That doesn't look like a valid mobile number ");
+                                cform.mobile.focus();
+                                cform.mobile.select();
+                                return false;
+                            }
+                            if (cform.checksms.checked) {
+                                if (!cform.mobile.value.match(/^\+?[\d\s\-)(]{10,18}$/)) {
+                                    alert("That doesn 't look like a valid mobile phone number");
+                                    cform.mobile.focus();
+                                    return false;
+                                }
+                            }
+                            if (cform.school.selectedIndex == 0) {
+                                alert("Please tell us which campus you want to attend");
+                                return false;
+                            }
+                            if (cform.wantbrochure.checked) {
+                                if (!cform.address.value.match(/^[0-9A-Z .,'-]{2,100}$/i)) {
+                                    alert("Please provide your address");
+                                    cform.address.focus();
+                                    return false;
+                                }
+                                if (!cform.city.value.match(/^[A-Z ., '-]{2,100}$/i)) {
+                                    alert("Please tell us your city");
+                                    cform.city.focus();
+                                    return false;
+                                }
+                                if (cform.state.selectedIndex == 0) {
+                                    alert("Please select your state from the list");
+                                    return false;
+                                }
+                                if (cform.state.selectedIndex > 1) {
+                                    if (!cform.zip.value.match(/(^\d{5}$)|(^\d{5}-\d{4}$)/)) {
+                                        alert("That doesn't look like a valid USA zip code. ");
+                                        cform.zip.focus();
+                                        return false;
+                                    }
+                                }
+                            }
+                            cform.submitbutton.disabled = true;
+                            return true;
+                        }
+                    </script>
+                    <form method="post " action="/sidebar.php " onsubmit="return checkForm(); " id="sidecontactform " name="[object] ">
+                        <label>Name*</label> <input autocomplete="OFF " tabindex="1 " id="name " name="name " /> <input autocomplete="OFF " id="fname " name="fname " /> <label>Email*</label> <input tabindex="2 " autocomplete="OFF
+                " id="mail " name="mail " /> <label>Mobile/Phone*</label> <input tabindex="3 " autocomplete="OFF " id="mobile " name="mobile " /> <input type="checkbox " value="on " tabindex="4 " id="checksms " name="checksms
+                " /> <label>Receive info via SMS*</label> <label>Best Time to Contact</label> <input tabindex="5 " id="besttime " name="besttime " /> <br />
+                        <label>School of Interest</label> <select id="school " name="school " tabindex="6 "> 
+<option value="0 ">
+(choose)</option>
+<option value="Fresno, California ">
+Fresno, CA</option> 
+<option value="Chicago, Illinois ">
+Chicago, IL</option> 
+<option value="Detroit, Michigan ">
+Detroit, MI</option> 
+<option value="Sacramento, California ">
+Sacramento, CA</option> 
+<option value="San Leandro, California ">
+San Leandro, CA</option> 
+<option value="San Francisco, California ">
+San Francisco, CA</option> 
+<option value="-- ">
+------------------------</option> 
+<option value="Canyon Country, California ">
+Canyon Country, CA</option> 
+<option value="Charlotte, North Carolina ">
+Charlotte, NC</option> 
+<option value="Hollywood, California ">
+Hollywood, CA</option> 
+<option value="Kansas City, Missouri ">
+Kansas City, MO</option> 
+<option value="Milwaukee, Wisconsin ">
+Milwaukee, WI</option> 
+<option value="Orange County, California ">
+Orange County, CA</option> 
+<option value="Phoenix, Arizona ">
+Phoenix, AZ</option> 
+<option value="Portland, Oregon ">
+Portland, OR</option> 
+<option value="Raleigh, North Carolina ">
+Raleigh, NC</option> 
+<option value="San Marcos, California ">
+San Marcos, CA</option> 
+<option value="Seattle, Washington ">
+Seattle, WA</option> 
+<option value="Southbay, California ">
+Southbay, CA</option> 
+<option value="St. Louis, Missouri ">
+St. Louis, MO</option> 
+<option value="West Los Angeles, California ">
+West Los Angeles, CA</option></select> <label id="brochurelabel ">Want a brochure?</label> <input type="checkbox " value="on " id="wantbrochure " name="wantbrochure " tabindex="7 " />
+                        <div id="brochure ">
+                            <label>Address:</label> <input tabindex="8 " autocomplete="OFF " maxlength="100 " size="30 " id="address " name="address " /> <label>City:</label> <input tabindex="9 " autocomplete="OFF " maxlength="100
+                " size="30 " id="city " name="city " /> <label>State:</label> <select size="1 " id="state " name="state " tabindex="10 "> 
+<option>
+-- Select a state --</option> 
+<option value="ZZ ">
+Outside the US</option> 
+<option value="AL ">
+Alabama</option> 
+<option value="AK ">
+Alaska</option> 
+<option value="AZ ">
+Arizona</option> 
+<option value="AR ">
+Arkansas</option> 
+<option value="CA ">
+California</option> 
+<option value="CO ">
+Colorado</option> 
+<option value="CT ">
+Connecticut</option> 
+<option value="DE ">
+Delaware</option> 
+<option value="FL ">
+Florida</option> 
+<option value="GA ">
+Georgia</option> 
+<option value="HI ">
+Hawaii</option> 
+<option value="ID ">
+Idaho</option> 
+<option value="IL ">
+Illinois</option> 
+<option value="IN ">
+Indiana</option> 
+<option value="IA ">
+Iowa</option> 
+<option value="KS ">
+Kansas</option> 
+<option value="KY ">
+Kentucky</option> 
+<option value="LA ">
+Louisiana</option> 
+<option value="ME ">
+Maine</option> 
+<option value="MD ">
+Maryland</option> 
+<option value="MA ">
+Massachusetts</option> 
+<option value="MI ">
+Michigan</option> 
+<option value="MN ">
+Minnesota</option> 
+<option value="MS ">
+Mississippi</option> 
+<option value="MO ">
+Missouri</option> 
+<option value="MT ">
+Montana</option> 
+<option value="NE ">
+Nebraska</option> 
+<option value="NV ">
+Nevada</option> 
+<option value="NH ">
+New Hampshire</option> 
+<option value="NJ ">
+New Jersey</option> 
+<option value="NM ">
+New Mexico</option> 
+<option value="NY ">
+New York</option> 
+<option value="NC ">
+North Carolina</option> 
+<option value="ND ">
+North Dakota</option> 
+<option value="OH ">
+Ohio</option> 
+<option value="OK ">
+Oklahoma</option> 
+<option value="OR ">
+Oregon</option> 
+<option value="PA ">
+Pennsylvania</option> 
+<option value="RI ">
+Rhode Island</option> 
+<option value="SC ">
+South Carolina</option> 
+<option value="SD ">
+South Dakota</option> 
+<option value="TN ">
+Tennessee</option> 
+<option value="TX ">
+Texas</option> 
+<option value="UT ">
+Utah</option> 
+<option value="VT ">
+Vermont</option> 
+<option value="VA ">
+Virginia</option> 
+<option value="WA ">
+Washington</option> 
+<option value="WV ">
+West Virginia</option> 
+<option value="WI ">
+Wisconsin</option> 
+<option value="WY ">
+Wyoming</option></select> <br />
+                            <label>Zip:</label> <input tabindex="11 " autocomplete="OFF " maxlength="10 " size="10 " id="zip " name="zip " />
+                        </div>
+                        <p class="buttons ">
+                            <input type="hidden " value="1627137567 " name="hqYTeq1q " /> <input type="submit " value="Submit " id="submitbutton " name="submitbutton " tabindex="12 " />
+                        </p>
+                    </form>
+                    <script type="text/javascript " language="javascript ">
+                        var $j = jQuery.noConflict();
+                        $j(document).ready(function() {
+                            if (!$j('#wantbrochure').attr('checked')) {
+                                $j("#brochure ").hide();
+                            }
+                        });
+                        $j('#brochurelabel').bind("click ", function() {
+                            $j('#brochure').slideToggle();
+                            if ($j('#wantbrochure').attr('checked')) {
+                                $j('#wantbrochure').removeAttr('checked');
+                            } else {
+                                $j('#wantbrochure').attr('checked', 'checked');
+                            }
+                        });
+                        $j('#wantbrochure').bind("click ", function() {
+                            $j('#brochure').slideToggle();
+                        });
+                    </script>
+                </div>
+                <div class="moduletable ">
+                    <table border="0 " width="100% " cellPadding="2 " cellSpacing="2 ">
+                        <tbody>
+                            <tr>
+                                <td align="center " vAlign="top "><b>State Specific<br />
+Bartending Age:</b></td>
+                            </tr>
+                            <tr>
+                                <td align="center " vAlign="top "><select name="Select a State " size="1 "> 
+<option value="age_to_bartend ">
+Age to Bartend</option> 
+<option value="alabama ">
+Alabama - 21</option> 
+<option value="alaska ">
+Alaska - 21</option> 
+<option value="arizona ">
+Arizona - 19</option> 
+<option value="arkansas ">
+Arkansas - 18</option> 
+<option value="california ">
+California - 21</option> 
+<option value="canada ">
+Canada - 18</option> 
+<option value="colorado ">
+Colorado - 18</option> 
+<option value="connecticut ">
+Connecticut - 18</option> 
+<option value="delaware ">
+Delaware - 21</option> 
+<option value="florida ">
+Florida - 18</option> 
+<option value="georgia ">
+Georgia - 18</option> 
+<option value="hawaii ">
+Hawaii - 18</option> 
+<option value="idaho ">
+Idaho - 19</option> 
+<option value="illinois ">
+Illinois - 18</option> 
+<option value="indiana ">
+Indiana - 21</option> 
+<option value="iowa ">
+Iowa - 18</option> 
+<option value="kansas ">
+Kansas - 21</option> 
+<option value="kentucky ">
+Kentucky - 20</option> 
+<option value="louisiana ">
+Louisiana - 18</option> 
+<option value="maine ">
+Maine - 18</option> 
+<option value="maryland ">
+Maryland - 21</option> 
+<option value="massuchusetts ">
+Massachusetts - 18</option> 
+<option value="mexico ">
+Mexico - 18</option> 
+<option value="michigan ">
+Michigan - 18</option> 
+<option value="minnesota ">
+Minnesota - 18</option> 
+<option value="mississippi ">
+Mississippi - 18</option> 
+<option value="missouri ">
+Missouri - 21</option> 
+<option value="montana ">
+Montana - 21</option> 
+<option value="nebraska ">
+Nebraska - 19</option> 
+<option value="las_vegas_nevada ">
+Nevada - 21</option> 
+<option value="new_hampshire ">
+New Hampshire - 18</option> 
+<option value="new_jersey ">
+New Jersey - 18</option> 
+<option value="new_mexico ">
+New Mexico - 21</option> 
+<option value="new_york ">
+New York - 18</option> 
+<option value="north_carolina ">
+North Carolina - 18</option> 
+<option value="north_dakota ">
+North Dakota - 21</option> 
+<option value="ohio ">
+Ohio - 21</option> 
+<option value="oklahoma ">
+Oklahoma - 21</option> 
+<option value="oregon ">
+Oregon - 21</option> 
+<option value="pennsylvania ">
+Pennsylvania - 18</option> 
+<option value="rhode_island ">
+Rhode Island - 18</option> 
+<option value="south_carolina ">
+South Carolina - 21</option> 
+<option value="south_dakota ">
+South Dakota - 18</option> 
+<option value="tennessee ">
+Tennessee - 18</option> 
+<option value="texas ">
+Texas - 18</option> 
+<option value="utah ">
+Utah - 21</option> 
+<option value="vermont ">
+Vermont - 18</option> 
+<option value="virginia ">
+Virginia - 21</option> 
+<option value="washington ">
+Washington State - 21</option> 
+<option value="washington_dc ">
+Washington, D.C. - 21</option> 
+<option value="west_virginia ">
+West Virginia - 18</option> 
+<option value="wisconsin ">
+Wisconsin - 18</option> 
+<option value="wyoming ">
+Wyoming - 21</option></select></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-        <div class="marquee">
-            <h1 style="align-items: center;">Bartending College News</h1>
-            <p>Rogue, inconspicuous motes of rock and gas descended from astronomers Sea of Tranquility billions upon billions star stuff harvesting star light stirred by starlight, Flatland billions upon billions vastness is bearable only through love great
-                turbulent clouds realm of the galaxies Orion's sword two ghostly white figures in coveralls and helmets are soflty dancing! Stirred by starlight, billions upon billions concept of the number one? Descended from astronomers rings of Uranus
-                another world, hearts of the stars how far away the carbon in our apple pies across the centuries, brain is the seed of intelligence, tingling of the spine muse about! Cambrian explosion dispassionate extraterrestrial observer.</p>
-            <p>Radio telescope cosmic ocean colonies consciousness, Hypatia! Culture. Prime number light years Hypatia. Hundreds of thousands tesseract. Decipherment corpus callosum, across the centuries a mote of dust suspended in a sunbeam, trillion worldlets
-                with pretty stories for which there's little good evidence. Birth galaxies from which we spring network of wormholes. Dream of the mind's eye a billion trillion. Prime number kindling the energy hidden in matter star stuff harvesting star
-                light ship of the imagination. Colonies realm of the galaxies. The only home we've ever known something incredible is waiting to be known rich in heavy atoms.</p>
-            <p>Apollonius of Perga! Radio telescope white dwarf Vangelis star stuff harvesting star light intelligent beings, Hypatia descended from astronomers. A billion trillion Vangelis another world. Hearts of the stars. Colonies inconspicuous motes
-                of rock and gas realm of the galaxies decipherment tendrils of gossamer clouds at the edge of forever? Worldlets Orion's sword Cambrian explosion, emerged into consciousness, laws of physics tendrils of gossamer clouds venture. Flatland
-                paroxysm of global death Jean-François Champollion.</p>
-            <p>Science muse about white dwarf, rich in heavy atoms stirred by starlight Euclid light years. Citizens of distant epochs not a sunrise but a galaxyrise emerged into consciousness, another world permanence of the stars inconspicuous motes of
-                rock and gas, the carbon in our apple pies paroxysm of global death, tesseract, encyclopaedia galactica tendrils of gossamer clouds brain is the seed of intelligence, rich in heavy atoms rings of Uranus Cambrian explosion Tunguska event
-                explorations encyclopaedia galactica. Billions upon billions astonishment, radio telescope and billions upon billions upon billions upon billions upon billions upon billions upon billions.</p>
+
+                <!--end old code-->
+                <div class="marquee-wrap">
+
+                    <div class="marquee">
+                        <h1 style="align-items: center;">Bartending College News</h1>
+                        <p>Rogue, inconspicuous motes of rock and gas descended from astronomers Sea of Tranquility billions upon billions star stuff harvesting star light stirred by starlight, Flatland billions upon billions vastness is bearable only through
+                            love great turbulent clouds realm of the galaxies Orion's sword two ghostly white figures in coveralls and helmets are soflty dancing! Stirred by starlight, billions upon billions concept of the number one? Descended from astronomers
+                            rings of Uranus another world, hearts of the stars how far away the carbon in our apple pies across the centuries, brain is the seed of intelligence, tingling of the spine muse about! Cambrian explosion dispassionate extraterrestrial
+                            observer.
+                        </p>
+                        <p>Radio telescope cosmic ocean colonies consciousness, Hypatia! Culture. Prime number light years Hypatia. Hundreds of thousands tesseract. Decipherment corpus callosum, across the centuries a mote of dust suspended in a sunbeam,
+                            trillion worldlets with pretty stories for which there's little good evidence. Birth galaxies from which we spring network of wormholes. Dream of the mind's eye a billion trillion. Prime number kindling the energy hidden in
+                            matter star stuff harvesting star light ship of the imagination. Colonies realm of the galaxies. The only home we've ever known something incredible is waiting to be known rich in heavy atoms.</p>
+                        <p>Apollonius of Perga! Radio telescope white dwarf Vangelis star stuff harvesting star light intelligent beings, Hypatia descended from astronomers. A billion trillion Vangelis another world. Hearts of the stars. Colonies inconspicuous
+                            motes of rock and gas realm of the galaxies decipherment tendrils of gossamer clouds at the edge of forever? Worldlets Orion's sword Cambrian explosion, emerged into consciousness, laws of physics tendrils of gossamer clouds
+                            venture. Flatland paroxysm of global death Jean-François Champollion.</p>
+                        <p>Science muse about white dwarf, rich in heavy atoms stirred by starlight Euclid light years. Citizens of distant epochs not a sunrise but a galaxyrise emerged into consciousness, another world permanence of the stars inconspicuous
+                            motes of rock and gas, the carbon in our apple pies paroxysm of global death, tesseract, encyclopaedia galactica tendrils of gossamer clouds brain is the seed of intelligence, rich in heavy atoms rings of Uranus Cambrian explosion
+                            Tunguska event explorations encyclopaedia galactica. Billions upon billions astonishment, radio telescope and billions upon billions upon billions upon billions upon billions upon billions upon billions.</p>
 
 
-        </div>
-    </div>
+                    </div>
+                </div>
 </body>
 
 </html>
