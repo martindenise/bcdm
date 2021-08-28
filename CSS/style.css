@@ -2,21 +2,21 @@ body {
     background-color: black;
 }
 
-div#middle {
+#middle {
     width: auto;
     margin: 10px 0 0 0;
     clear: both;
 }
 
-div#middle .background {
+#middle .background {
     min-height: 140px;
 }
 
-div#left {
+#left {
     width: 190px;
 }
 
-div#middle .layoutleft div#left {
+#middle .layoutleft #left {
     float: left;
 }
 
@@ -24,7 +24,7 @@ div#middle .layoutright div#left {
     float: right;
 }
 
-div#date {
+#date {
     width: 175px;
     height: 30px;
     padding: 0 0 0 15px;
@@ -33,85 +33,85 @@ div#date {
     font-size: 95%;
 }
 
-div#submenu {
+#submenu {
     width: 190px;
     padding: 0;
     overflow: hidden;
 }
 
-div#end {
+#end {
     width: 190px;
     height: 10px;
     margin: 0 0 15px 0;
     background: url(../../../img/end_bg.png) 0 0 no-repeat;
 }
 
-div#main {
+d#main {
     width: auto;
 }
 
-div#middle .layoutleft div#main {
+#middle .layoutleft #main {
     margin: 0 0 0 190px;
     padding: 0 0 0 20px;
 }
 
-div#middle .layoutright div#main {
+#middle .layoutright #main {
     margin: 0 190px 0 0;
     padding: 0 20px 0 0;
 }
 
-div#middle .withoutleft div#main {
+#middle .withoutleft #main {
     margin: 0;
 }
 
-div#breadcrumb {
+#breadcrumb {
     height: 19px;
     padding: 5px 0 5px 0;
     font-size: 85%;
     color: #646464;
 }
 
-div#breadcrumb a:link,
-div#breadcrumb a:visited {
+#breadcrumb a:link,
+#breadcrumb a:visited {
     color: #646464;
 }
 
-div#breadcrumb a:hover {
+#breadcrumb a:hover {
     color: #ff6400;
 }
 
-div#mainmiddle {
+#mainmiddle {
     margin: 10px 0 10px 0;
 }
 
-div#main .withright {
+#main .withright {
     background: url(../../../img/right_bg.png) 100% 0 repeat-y;
 }
 
-div#main .withoutright {
+#main .withoutright {
     background: transparent;
 }
 
-div#right {
+#right {
     width: 170px;
     padding: 0 10px 0 0;
     float: right;
 }
 
-div#content {
+#content {
     width: auto;
     padding: 0 10px 0 0;
 }
 
-div#main .withright div#content {
+#main .withright #content {
     margin: 0 180px 0 0;
 }
 
-div#main .withoutright div#content {
+#main .withoutright #content {
     margin: 0;
 }
 
-div#mainbottom {
+#mainbottom {
     margin: 0 0 10px 0;
 }
 
