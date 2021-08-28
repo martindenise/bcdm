@@ -61,7 +61,7 @@ body {
 }
 
 .sidenav a:hover {
-    color: whitesmoke;
+    color: darkred;
 }
 
 .main {
@@ -229,4 +229,58 @@ h3 {
 
 .content h1 {
     text-align: center;
+}
+
+
+/*Marquee Starts Here*/
+
+.marquee-wrap {
+    overflow: auto;
+    height: 150px;
+    border: 1px solid #000;
+    color: white;
+    margin-left: 5%;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* increase duration to speed up scroll */
+
+.marquee {
+    animation: scrollUp 45s linear 1s infinite;
+}
+
+@supports (transform:translate3d(0px, 0px, 0px)) {
+    .marquee-wrap {
+        overflow: hidden;
+    }
+    .marquee {
+        padding-top: 160px;
+    }
+}
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    .marquee-wrap {
+        overflow: hidden;
+    }
+    /* ie11 hack */
+    .marquee {
+        padding-top: 160px;
+    }
+}
+
+@keyframes scrollUp {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.marquee:hover {
+    animation-play-state: paused
 }
